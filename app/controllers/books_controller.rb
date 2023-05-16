@@ -10,6 +10,10 @@ class BooksController < ApplicationController
     # ↓ホームに飛ばすよう後で変更する
     redirect_to books_path
   end
+  
+  def edit
+    @book = Book.find(params[:id])
+  end
 
   def index
     @book = Book.new
