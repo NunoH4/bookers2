@@ -7,7 +7,6 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     @book.save
-    # ↓ホームに飛ばすよう後で変更する
     redirect_to books_path
   end
   
@@ -17,6 +16,8 @@ class BooksController < ApplicationController
 
   def index
     @book = Book.new
+    @books = Book.all
+    @user = current_user.id
   end
 
   def show
