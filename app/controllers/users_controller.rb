@@ -9,6 +9,8 @@ class UsersController < ApplicationController
   end
   
   def index
+    @user = current_user.id
+    @users = User.all
   end
   
   def update
