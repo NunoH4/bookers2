@@ -10,9 +10,20 @@ class ApplicationController < ActionController::Base
     root_path
   end
   
+  def create
+    @book = Book.new(book_params)
+    @book.user_id = current_user.id
+    @book.save
+    redirect_to books_path
+  end
+  
   protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email])
+  end
+  
+  def book_params
+    params.require(:book).permit(:title, :body)
   end
 end
