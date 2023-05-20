@@ -4,21 +4,6 @@
         
         <%= render 'users/user_info', user: @book.user %>
 
-        <!--<h2>New book</h2>-->
-        <!--<%= form_with model: @book_post do |f| %>-->
-
-        <!--<div class="form-group">-->
-        <!--  <label for="book_title">Title</label>-->
-        <!--  <%= f.text_field :title, :class => 'form-control book_title' %>-->
-        <!--</div>-->
-
-        <!--<div class="form-group">-->
-        <!--  <label for="book_opinion">Opinion</label>-->
-        <!--  <%= f.text_area :body, :class => 'form-control book_opinion'  %>-->
-        <!--</div>-->
-
-        <!--<div><%= f.submit "Create Book", class: "btn btn-success" %></div>-->
-        <!--<% end %>-->
         <%= render 'new_book', book: @book_post %>
 
       </div>
